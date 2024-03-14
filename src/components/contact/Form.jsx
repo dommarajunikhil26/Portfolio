@@ -2,9 +2,11 @@ import './contact.css';
 import { TextField } from '@mui/material';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
-import HireButton from '../Hero/HireButton';
+// import HireButton from '../Hero/HireButton';
 import { useState } from 'react';
 import { validate } from './FormValidation';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const grey = {
@@ -52,6 +54,8 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
         `,
 );
 const Form = () => {
+    const notify = () => toast("Thank you for reaching out!");
+
     const [formValues, setFormValues] = useState({
         name: '',
         email: '',
@@ -147,7 +151,19 @@ const Form = () => {
                         style={{ color: "#C7D0DD" }}
                     />
                     <div className='flex justify-center'>
-                        <HireButton title="Send" type="submit" />
+                        <button type="submit" onClick={notify} className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Send</button>
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="dark"
+                        />
                     </div>
                 </form>
             </div>

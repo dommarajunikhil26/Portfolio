@@ -2,6 +2,8 @@ import Form from "./Form"
 import { useInView } from "react-intersection-observer";
 import { Fade } from "react-awesome-reveal";
 
+
+
 const Contact = () => {
     const { ref, inView } = useInView({
         triggerOnce: true,
