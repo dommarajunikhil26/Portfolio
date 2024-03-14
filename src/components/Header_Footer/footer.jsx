@@ -1,6 +1,7 @@
 import instagram from '../../Resources/Logo/contact/instagram.svg';
 import gmail from '../../Resources/Logo/contact/gmail.svg';
 import linkedin from '../../Resources/Logo/contact/linkedin.svg';
+import github from '../../Resources/Logo/contact/github.svg';
 
 const Footer = () => {
     return (
@@ -14,6 +15,9 @@ const Footer = () => {
                     </a>
                     <a href="https://www.linkedin.com/in/nikhil-dommaraju/" target="_blank" rel="noopener noreferrer">
                         <img src={linkedin} alt="LinkedIn" className='h-8 w-8' />
+                    </a>
+                    <a href="https://github.com/dommarajunikhil26" target="_blank" rel="noopener noreferrer">
+                        <img src={github} alt="GitHub" className='h-8 w-8' />
                     </a>
                     <a href="mailto:nikhild2611@gmail.com" target="_blank" rel="noopener noreferrer">
                         <img src={gmail} alt="Gmail" className='h-8 w-8' />
