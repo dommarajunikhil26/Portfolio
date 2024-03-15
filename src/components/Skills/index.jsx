@@ -10,7 +10,7 @@ const Skills = () => {
     })
 
     return (
-        <div id="skills" className="py-6 xs:py-14 xmd:py-16 bg-gray-50">
+        <div id="skills" className="pt-6 pb-10 xs:py-14 xmd:py-16 bg-gray-50">
             <div ref={ref}>
                 {inView ? (
                     <Fade delay={5} duration={1000}>

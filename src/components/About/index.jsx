@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useInView } from "react-intersection-observer";
 import { Fade, Slide } from "react-awesome-reveal";
 import aboutPhoto from '../../Resources/Images/About.jpg';
@@ -8,7 +9,7 @@ const About = () => {
     });
 
     return (
-        <div id="about" className="bg-gray-50 pt-5">
+        <div id="about" className="bg-gray-50 pt-7 pb-10">
             <div ref={ref}>
                 {inView ? (
                     <Fade delay={5} duration={1000}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import NavBar from './components/Header_Footer/NavBar';
 import Hero from './components/Hero/Hero';
 import Skills from './components/Skills';
@@ -14,15 +14,13 @@ const App = () => {
   const [animationOpacity, setAnimationOpacity] = useState(1);
 
   useEffect(() => {
-    // Start fade out after 4.5 seconds to give some time for animation to be enjoyed
     setTimeout(() => {
-      setAnimationOpacity(0); // Start fading out the animation
-    }, 4500);
+      setAnimationOpacity(0);
+    }, 2500);
 
-    // After 5 seconds, remove the hamster animation from the DOM
     const timer = setTimeout(() => {
       setShowAnimation(false);
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
