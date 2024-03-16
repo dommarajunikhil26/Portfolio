@@ -2,7 +2,6 @@ import './contact.css';
 import { TextField } from '@mui/material';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
-// import HireButton from '../Hero/HireButton';
 import { useState } from 'react';
 import { validate } from './FormValidation';
 import { ToastContainer, toast } from "react-toastify";
@@ -25,7 +24,7 @@ const grey = {
 const TextareaAutosize = styled(BaseTextareaAutosize)(
     ({ theme }) => `
             box-sizing: border-box;
-            width: 450px;
+            width: 100%;
             font-family: 'IBM Plex Sans', sans-serif;
             font-size: 0.875rem;
             font-weight: 400;
@@ -74,11 +73,17 @@ const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formValues);
+        setFormValues({
+            name: '',
+            email: '',
+            phone: '',
+            message: ''
+        })
     };
 
     return (
         <div className='flex justify-center mt-10'>
-            <div className="form-container">
+            <div className="form-container w-[90%] lg:w-1/2">
                 <form className="form" onSubmit={handleSubmit}>
                     <TextField
                         id="name"
