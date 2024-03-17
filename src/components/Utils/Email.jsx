@@ -1,15 +1,17 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { useFormContext } from '../contact/FormContext';
 
-export const ContactUs = () => {
+export const Email = () => {
+    const { formData } = useFormContext();
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
-            .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-                publicKey: 'YOUR_PUBLIC_KEY',
+            .sendForm('service_g0tgo7s', 'template_d89zx4v', form.current, {
+                publicKey: 'pjNFrnTuR5F4gpVQs',
             })
             .then(
                 () => {
@@ -19,17 +21,12 @@ export const ContactUs = () => {
                     console.log('FAILED...', error.text);
                 },
             );
+
     };
 
     return (
         <form ref={form} onSubmit={sendEmail}>
-            <label>Name</label>
-            <input type="text" name="user_name" />
-            <label>Email</label>
-            <input type="email" name="user_email" />
-            <label>Message</label>
-            <textarea name="message" />
-            <input type="submit" value="Send" />
+            {formData}
         </form>
     );
 };

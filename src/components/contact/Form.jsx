@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { validate } from './FormValidation';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useFormContext } from './FormContext';
 
 const grey = {
     50: '#F3F6F9',
@@ -35,8 +35,6 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
             background: ${theme.palette.mode === 'dark' ? '#212121' : '#212121'};
             border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[800]};
 
-
-
             &:hover {
               border-color: ${'#40c9ff'};
             }
@@ -52,7 +50,9 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
             }
         `,
 );
+
 const Form = () => {
+    const { setFormData } = useFormContext();
     const notify = () => toast("Thank you for reaching out!");
 
     const [formValues, setFormValues] = useState({
@@ -64,6 +64,7 @@ const Form = () => {
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
+
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
         const error = validate(name, value);
@@ -72,7 +73,8 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formValues);
+        setFormData(formValues);
+
         setFormValues({
             name: '',
             email: '',
