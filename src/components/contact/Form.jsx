@@ -56,38 +56,32 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
 
 const Form = () => {
     const form = useRef();
-    const notify = () => toast("Thank you for reaching out!");
+    const notify = (msg) => toast(msg);
 
     const [formValues, setFormValues] = useState({
-        name: '',
-        email: '',
-        phone: '',
+        from_name: '',
+        from_email: '',
+        from_phone: '',
         message: ''
     });
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
-
         const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
+        setFormValues(prevState => ({ ...prevState, [name]: value }));
         const error = validate(name, value);
-        setErrors({ ...errors, [name]: error });
+        setErrors(prevState => ({ ...prevState, [name]: error }));
     };
-
-    const handleSubmit = (e) => {
-        notify()
-        e.preventDefault();
-        setFormValues({
-            name: '',
-            email: '',
-            phone: '',
-            message: ''
-        })
-    };
-
 
     const sendEmail = (e) => {
+        notify("Thank you for reaching out!")
         e.preventDefault();
+        setFormValues({
+            from_name: '',
+            from_email: '',
+            from_phone: '',
+            message: ''
+        })
 
         emailjs
             .sendForm('service_g0tgo7s', 'template_d89zx4v', form.current, {
@@ -95,10 +89,10 @@ const Form = () => {
             })
             .then(
                 () => {
-                    console.log('SUCCESS!');
+                    notify("Email Received by Nikhil");
                 },
                 (error) => {
-                    console.log('FAILED...', error.text);
+                    notify(error.text);
                 },
             );
     };
@@ -106,16 +100,16 @@ const Form = () => {
     return (
         <div className='flex justify-center mt-10'>
             <div className="form-container w-[90%] lg:w-1/2">
-                <form ref={form} className="form" onSubmit={handleSubmit}>
+                <form ref={form} className="form">
                     <TextField
                         id="name"
-                        name='name'
+                        name='from_name'
                         label="Name"
                         variant="outlined"
-                        value={formValues.name}
+                        value={formValues.from_name}
                         onChange={handleChange}
-                        error={!!errors.name}
-                        helperText={errors.name || ''}
+                        error={!!errors.from_name}
+                        helperText={errors.from_name || ''}
                         required
                         sx={{
                             input: { color: "#C7D0DD" },
@@ -129,13 +123,13 @@ const Form = () => {
                     />
                     <TextField
                         id="email"
-                        name='email'
+                        name='from_email'
                         label="Email"
                         variant="outlined"
-                        value={formValues.email}
+                        value={formValues.from_email}
                         onChange={handleChange}
-                        error={!!errors.email}
-                        helperText={errors.email || ''}
+                        error={!!errors.from_email}
+                        helperText={errors.from_email || ''}
                         required
                         sx={{
                             input: { color: "#C7D0DD" },
@@ -149,13 +143,13 @@ const Form = () => {
                     />
                     <TextField
                         id="phone"
-                        name='phone'
-                        label="Phone"
+                        name='from_phone'
+                        label="phone"
                         variant="outlined"
-                        value={formValues.phone}
+                        value={formValues.from_phone}
                         onChange={handleChange}
-                        error={!!errors.phone}
-                        helperText={errors.phone || ''}
+                        error={!!errors.from_phone}
+                        helperText={errors.from_phone || ''}
                         required
                         sx={{
                             input: { color: "#C7D0DD" },
