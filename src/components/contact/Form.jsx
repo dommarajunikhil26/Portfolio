@@ -1,4 +1,5 @@
 import './contact.css';
+import { useRef } from 'react';
 import { TextField } from '@mui/material';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
@@ -6,7 +7,7 @@ import { useState } from 'react';
 import { validate } from './FormValidation';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { useFormContext } from './FormContext';
+import emailjs from '@emailjs/browser';
 
 const grey = {
     50: '#F3F6F9',
@@ -51,8 +52,10 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
         `,
 );
 
+
+
 const Form = () => {
-    const { setFormData } = useFormContext();
+    const form = useRef();
     const notify = () => toast("Thank you for reaching out!");
 
     const [formValues, setFormValues] = useState({
@@ -72,9 +75,8 @@ const Form = () => {
     };
 
     const handleSubmit = (e) => {
+        notify()
         e.preventDefault();
-        setFormData(formValues);
-
         setFormValues({
             name: '',
             email: '',
@@ -83,10 +85,28 @@ const Form = () => {
         })
     };
 
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm('service_g0tgo7s', 'template_d89zx4v', form.current, {
+                publicKey: 'pjNFrnTuR5F4gpVQs',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+    };
+
     return (
         <div className='flex justify-center mt-10'>
             <div className="form-container w-[90%] lg:w-1/2">
-                <form className="form" onSubmit={handleSubmit}>
+                <form ref={form} className="form" onSubmit={handleSubmit}>
                     <TextField
                         id="name"
                         name='name'
@@ -158,7 +178,7 @@ const Form = () => {
                         style={{ color: "#C7D0DD" }}
                     />
                     <div className='flex justify-center'>
-                        <button type="submit" onClick={notify} className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Send</button>
+                        <button type="submit" onClick={sendEmail} className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Send</button>
                         <ToastContainer
                             position="top-right"
                             autoClose={5000}
