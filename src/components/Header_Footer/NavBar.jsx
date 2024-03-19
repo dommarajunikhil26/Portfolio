@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import logo from '../../Resources/Logo/profile/logo3.png';
 import { Link } from "react-scroll";
 
@@ -9,7 +10,7 @@ const NavBar = () => {
     return (
 
         <header className="relative inset-x-0 top-0 z-50">
-            <nav className="flex items-center justify-between p-6 lg:px-8 bg-gray-900" aria-label="Global">
+            <nav className="flex items-center justify-between p-6 lg:px-8 " aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
@@ -61,7 +62,7 @@ const NavBar = () => {
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
-                                    <Link to="hero" smooth={true} duration={500} onClick={() => setNavOpen(false)} className="cursor-pointer -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:shadow-glow">Home</Link>
+                                    <Link to="home" smooth={true} duration={500} onClick={() => setNavOpen(false)} className="cursor-pointer -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:shadow-glow">Home</Link>
                                     <Link to="about" smooth={true} duration={500} onClick={() => setNavOpen(false)} className="cursor-pointer -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:shadow-glow">About</Link>
                                     <Link to="skills" smooth={true} duration={500} onClick={() => setNavOpen(false)} className="cursor-pointer -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:shadow-glow">Skills</Link>
                                     <Link to="projects" smooth={true} duration={500} onClick={() => setNavOpen(false)} className="cursor-pointer -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:shadow-glow">Projects</Link>

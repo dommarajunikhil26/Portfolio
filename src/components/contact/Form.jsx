@@ -89,7 +89,7 @@ const Form = () => {
             })
             .then(
                 () => {
-                    notify("Email Received by Nikhil");
+                    notify("Message Sent to Nikhil");
                 },
                 (error) => {
                     notify(error.text);
@@ -98,8 +98,8 @@ const Form = () => {
     };
 
     return (
-        <div className='flex justify-center mt-10'>
-            <div className="form-container w-[90%] lg:w-1/2">
+        <div className='flex justify-center w-full'>
+            <div className="form-container w-[80%]">
                 <form ref={form} className="form">
                     <TextField
                         id="name"

@@ -10,11 +10,11 @@ const Skills = () => {
     })
 
     return (
-        <div id="skills" className="pt-6 pb-10 xs:py-14 xmd:py-16 bg-gray-50">
+        <div id="skills" className="pt-10 pb-10 xs:py-14 xmd:py-16 bg-gray-50">
             <div ref={ref}>
                 {inView ? (
                     <Fade delay={5} duration={1000}>
-                        <h2 className="uppercase text-center font-roboto-slab text-4xl">Skills</h2>
+                        <h2 className="uppercase text-center font-roboto-slab font-bold text-4xl">Skills</h2>
                         <div className="overflow-hidden mt-8">
                             <div className="flex overflow-x-hidden">
                                 <div className="flex whitespace-nowrap">

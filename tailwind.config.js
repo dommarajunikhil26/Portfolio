@@ -7,7 +7,7 @@ export default {
   ],
   theme: {
     extend: {
-        boxShadow: {
+      boxShadow: {
         'glow': '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #eb09ff, 0 0 40px #eb09ff'
       },
       fontFamily: {
@@ -28,6 +28,9 @@ export default {
           '100%': { transform: 'translateX(0%)' },
         },
       },
+      backgroundImage: {
+        'custom-gradient': "linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)",
+      }
     },
   },
   plugins: [],

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import NavBar from './components/Header_Footer/NavBar';
+// import NavBar from './components/Header_Footer/NavBar';
 import Hero from './components/Hero/Hero';
 import Skills from './components/Skills';
 import About from './components/About';
@@ -33,7 +33,7 @@ const App = () => {
         </div>
       ) : (
         <>
-          <NavBar />
+          {/* <NavBar /> */}
           <Hero />
           <About />
           <Skills />

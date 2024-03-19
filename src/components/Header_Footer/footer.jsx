@@ -5,7 +5,7 @@ import github from '../../Resources/Logo/contact/github.svg';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white p-5">
+        <footer className="bg-[url('/src/Resources/Images/footer-bg.png')] text-white p-5">
             <div className="container mx-auto flex flex-col items-center">
                 <h2 className="text-xl font-semibold">Nikhil Sai Dommaraju</h2>
                 <h4 className="text-md mb-4">Full Stack Developer</h4>

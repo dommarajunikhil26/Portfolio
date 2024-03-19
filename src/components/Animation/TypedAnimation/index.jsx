@@ -23,7 +23,7 @@ const TypedAnimatedComponent = () => {
                     wrapper="div"
                     cursor={true}
                     repeat={Infinity}
-                    className="text-2xl md:text-3xl lg:text-4xl font-poppins inline-block"
+                    className="text-2xl md:text-3xl lg:text-4xl font-poppins font-bold inline-block"
                 />
             )}
         </>

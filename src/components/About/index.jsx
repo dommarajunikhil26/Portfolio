@@ -9,11 +9,11 @@ const About = () => {
     });
 
     return (
-        <div id="about" className="bg-gray-50 pt-7 pb-10 min-h-[800px]">
+        <div id="about" className="bg-gray-950 pt-7 pb-10 min-h-screen text-gray-50">
             <div ref={ref}>
                 {inView ? (
                     <Fade delay={5} duration={1000}>
-                        <h2 className="uppercase text-center font-roboto-slab text-4xl">About</h2>
+                        <h2 className="uppercase font-bold text-center font-roboto-slab text-4xl">About</h2>
                     </Fade>
                 ) : (
                     <h2 className="uppercase text-center font-roboto-slab text-4xl">About</h2>
