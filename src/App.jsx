@@ -7,7 +7,7 @@ import Contact from './components/contact';
 import Footer from './components/Header_Footer/footer';
 // import Projects from './components/Projects';
 import HamsterWheelAnimation from './components/Animation/IntroAnimation';
-import './Resources/styles/styles.css';
+import '../public/Resources/styles/styles.css';
 
 const App = () => {
   const [showAnimation, setShowAnimation] = useState(true);
@@ -26,7 +26,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-[url('/src/Resources/Images/banner-bg.png')]">
+    <div className="bg-[url('../public/Resources/Images/banner-bg.png')]">
       {showAnimation ? (
         <div style={{ opacity: animationOpacity, transition: 'opacity 0.5s ease-out' }}>
           <HamsterWheelAnimation />

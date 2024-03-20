@@ -1,7 +1,7 @@
 import Form from "./Form"
 import { useInView } from "react-intersection-observer";
 import { Fade } from "react-awesome-reveal";
-import contact from '../../Resources/Logo/contact/contact-img.svg';
+import contact from '../../../public/Resources/Logo/contact/contact-img.svg';
 
 const Contact = () => {
     const { ref, inView } = useInView({
@@ -9,7 +9,7 @@ const Contact = () => {
     })
 
     return (
-        <div ref={ref} id="contact" className="bg-custom-gradient pt-10 min-h-screen">
+        <div ref={ref} id="contact" className="bg-custom-gradient pt-10 min-h-screen md:mb-0">
             {inView ? (
                 <Fade delay={5} duration={1000}>
                     <h2 className="uppercase text-center text-gray-50 font-roboto-slab font-bold text-4xl">Contact Me</h2>

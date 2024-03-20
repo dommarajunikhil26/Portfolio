@@ -1,4 +1,4 @@
-import profilePicture from '../../Resources/Images/Hero.jpeg';
+import profilePicture from '../../../public/Resources/Images/Hero.jpeg';
 const HeroImage = () => {
     return (
         <div className='flex justify-center items-center'>

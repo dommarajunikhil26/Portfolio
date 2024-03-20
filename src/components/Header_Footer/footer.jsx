@@ -1,7 +1,7 @@
-import instagram from '../../Resources/Logo/contact/instagram.svg';
-import gmail from '../../Resources/Logo/contact/gmail.svg';
-import linkedin from '../../Resources/Logo/contact/linkedin.svg';
-import github from '../../Resources/Logo/contact/github.svg';
+import instagram from '../../../public/Resources/Logo/contact/instagram.svg';
+import gmail from '../../../public/Resources/Logo/contact/gmail.svg';
+import linkedin from '../../../public/Resources/Logo/contact/linkedin.svg';
+import github from '../../../public/Resources/Logo/contact/github.svg';
 
 const Footer = () => {
     return (

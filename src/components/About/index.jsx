@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useInView } from "react-intersection-observer";
 import { Fade } from "react-awesome-reveal";
-import aboutPhoto from '../../Resources/Images/About.jpg';
+import aboutPhoto from '../../../public/Resources/Images/About.jpg';
 
 const About = () => {
     const { ref, inView } = useInView({

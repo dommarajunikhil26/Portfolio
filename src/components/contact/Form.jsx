@@ -98,7 +98,7 @@ const Form = () => {
     };
 
     return (
-        <div className='flex justify-center w-full'>
+        <div className='flex justify-center w-full pb-5'>
             <div className="form-container w-[80%]">
                 <form ref={form} className="form">
                     <TextField
