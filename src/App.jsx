@@ -5,7 +5,7 @@ import Skills from './components/Skills';
 import About from './components/About';
 import Contact from './components/contact';
 import Footer from './components/Header_Footer/footer';
-import Projects from './components/Projects';
+// import Projects from './components/Projects';
 import HamsterWheelAnimation from './components/Animation/IntroAnimation';
 import './Resources/styles/styles.css';
 
@@ -26,7 +26,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className='bg-gray-900'>
+    <div className="bg-[url('/src/Resources/Images/banner-bg.png')]">
       {showAnimation ? (
         <div style={{ opacity: animationOpacity, transition: 'opacity 0.5s ease-out' }}>
           <HamsterWheelAnimation />
@@ -37,7 +37,7 @@ const App = () => {
           <Hero />
           <About />
           <Skills />
-          <Projects />
+          {/* <Projects /> */}
           <Contact />
           <Footer />
         </>

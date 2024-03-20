@@ -4,6 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import TypedAnimatedComponent from '../Animation/TypedAnimation/index';
 import HeroImage from './HeroImage';
 import NavBar from "../Header_Footer/NavBar";
+import './resumeButton.css';
 const Hero = () => {
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -11,9 +12,14 @@ const Hero = () => {
 
     const scrollToContent = () => {
         document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-    }
+    };
+
+    const handleResumeClick = () => {
+        window.open("https://drive.google.com/file/d/1qj4nh5oe_zNHuJW_U0rcmApXxCoZCLrM/view?usp=sharing", "_blank");
+    };
+
     return (
-        <div className="bg-[url('/src/Resources/Images/banner-bg.png')]">
+        <div className="bg-[url(`${import.meta.env.REACT_APP_IMAGE_PATH}/banner-bg.png`)]">
             <NavBar />
             <div id="hero" className=" flex flex-col h-[95vh] font-poppins text-white md:flex-row justify-center items-center md:space-x-8 w-full">
                 <div className="flex flex-1 justify-center items-center mb-0 md:mb-0">
@@ -32,13 +38,23 @@ const Hero = () => {
                         </div>
                         <TypedAnimatedComponent />
                     </div>
-                    <div className="w-full flex justify-center md:justify-start md:w-1/2 mt-0 md:mt-0">
+                    <div className="w-full flex">
                         <button
                             type="button"
-                            className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                            className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-semibold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                             onClick={scrollToContent}
                         >
                             Hire Me
+                        </button>
+                        <button className="btn md:ml-5" type="button" onClick={handleResumeClick}>
+                            <strong>Resume</strong>
+                            <div id="container-stars">
+                                <div id="stars"></div>
+                            </div>
+                            <div id="glow">
+                                <div className="circle"></div>
+                                <div className="circle"></div>
+                            </div>
                         </button>
                     </div>
                 </div>

@@ -24,8 +24,8 @@ const About = () => {
                     <img src={aboutPhoto} alt="About Me" className="w-full h-auto rounded-md shadow-lg" />
                 </div>
                 <div className="w-full md:w-1/2 text-left md:text-left px-4">
-                    <Fade delay={1000} triggerOnce>
-                        <div className="md:border-l-2 border-black px-10">
+                    <Fade delay={500} triggerOnce>
+                        <div className="md:border-l-2 border-gray-50 px-10">
                             <p className="xl:text-2xl lg:text-xl md:text-sm font-poppins">
                                 I'm Nikhil, a dedicated Full Stack Web Developer and a Graduate Teaching Assistant
                                 at the University of Alabama in Huntsville. With a rich blend of academic rigor
