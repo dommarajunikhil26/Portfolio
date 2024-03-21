@@ -27,20 +27,20 @@ const About = () => {
                     <Fade delay={500} triggerOnce>
                         <div className="md:border-l-2 border-gray-50 px-10">
                             <p className="xl:text-2xl lg:text-xl md:text-sm font-poppins">
-                                I'm Nikhil, a dedicated Full Stack Web Developer and a Graduate Teaching Assistant
-                                at the University of Alabama in Huntsville. With a rich blend of academic rigor
-                                and practical expertise, I excel in bringing cutting-edge web solutions to life.
+                                Hey there! I'm Nikhil, a Graduate Teaching Assistant at UAHuntsville by day,
+                                and a Full Stack Developer by night. That's right, I wear two hats - building cutting-edge technologies
+                                and helping the next generation of developers get their start.
                             </p>
                             <p className="mt-4 xl:text-2xl lg:text-xl md:text-sm font-poppins">
-                                With over 5 years of internship experience as a Web Development and Java Intern,
-                                I've honed my skills in full-stack technologies, contributing to complex projects that
-                                enhance operational efficiencies and deliver compelling user experiences.
+                                Drawing on over 5 years of Web Development and Java Internships,
+                                I'm well-versed in full-stack development, and I love the challenge of creating projects that
+                                streamline processes and keep users engaged.
                             </p>
                             <p className="mt-4 xl:text-2xl lg:text-xl md:text-sm font-poppins">
-                                Beyond the digital realm, I'm passionate about continuously learning new technologies,
-                                and I cherish the vibrant worlds and narratives that anime offers. My free time often finds me
-                                amidst nature, paddling through serene waters or trekking along scenic trails, each experience
-                                enriching my creativity and drive.
+                                But code isn't all I love. I'm a huge anime fan, always down to explore a new world or get swept
+                                up in a thrilling story. When I'm not glued to a screen, you'll probably find me outdoors - kayaking
+                                on calm waters or hiking a scenic trail. Fresh air and new adventures definitely fuel my creativity
+                                and keep me pushing forward.
                             </p>
                         </div>
                     </Fade>

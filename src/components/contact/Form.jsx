@@ -144,7 +144,7 @@ const Form = () => {
                     <TextField
                         id="phone"
                         name='from_phone'
-                        label="phone"
+                        label="Phone"
                         variant="outlined"
                         value={formValues.from_phone}
                         onChange={handleChange}

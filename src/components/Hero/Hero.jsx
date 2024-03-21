@@ -19,7 +19,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="bg-[url(`${import.meta.env.REACT_APP_IMAGE_PATH}/banner-bg.png`)]">
+        <div className="bg-[url('../public/Resources/Images/banner-bg.png')]">
             <NavBar />
             <div id="hero" className=" flex flex-col h-[95vh] font-poppins text-white md:flex-row justify-center items-center md:space-x-8 w-full">
                 <div className="flex flex-1 justify-center items-center mb-0 md:mb-0">
