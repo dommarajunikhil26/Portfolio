@@ -4,7 +4,7 @@ import Skills from './components/Skills';
 import About from './components/About';
 import Contact from './components/contact';
 import Footer from './components/Header_Footer/footer';
-// import Projects from './components/Projects';
+import Projects from './components/Projects';
 import HamsterWheelAnimation from './components/Animation/IntroAnimation';
 import '../public/Resources/styles/styles.css';
 
@@ -35,7 +35,7 @@ const App = () => {
           <Hero />
           <About />
           <Skills />
-          {/* <Projects /> */}
+          <Projects />
           <Contact />
           <Footer />
         </>
