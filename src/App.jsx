@@ -25,9 +25,9 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-[url('../public/Resources/Images/banner-bg.png')]">
+    <>
       {showAnimation ? (
-        <div style={{ opacity: animationOpacity, transition: 'opacity 0.5s ease-out' }}>
+        <div style={{ opacity: animationOpacity, transition: 'opacity 0.5s ease-out' }} className="bg-[url('../public/Resources/Images/banner-bg.png')]">
           <HamsterWheelAnimation />
         </div>
       ) : (
@@ -40,7 +40,7 @@ const App = () => {
           <Footer />
         </>
       )}
-    </div>
+    </>
   );
 };
 

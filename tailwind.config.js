@@ -28,9 +28,18 @@ export default {
           '100%': { transform: 'translateX(0%)' },
         },
       },
-      backgroundImage: {
+      colors:{
+        color1: '#14052D',
+        color2: '#052F5B',
+        color3: '#005884',
+        color4: '#0083A4',
+        color5: '#00B0B8',
+        color6: '#55DBC1',
+      },
+      backgroundImage: theme => ({
         'custom-gradient': "linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)",
-      }
+        'custom-gradient2': `linear-gradient(to right, ${theme('colors.color1')}, ${theme('colors.color2')}, ${theme('colors.color3')}, ${theme('colors.color4')}, ${theme('colors.color5')}, ${theme('colors.color6')})`,
+      })
     },
   },
   plugins: [],

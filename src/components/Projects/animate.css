@@ -1,0 +1,62 @@
+/* animate.css */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate__fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.animate__slideInUp {
+    animation-name: slideInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInAndUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate__fadeInAndUp {
+    animation-name: fadeInAndUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.react-tabs__tab:hover {
+    background-color: #4A2FBD !important;
+    /* Ensure hover background color applies */
+}
+
+.react-tabs__tab--selected {
+    background-color: #4A2FBD !important;
+    /* Background color for selected tab */
+    color: #fff !important;
+    border-color: #fff !important;
+}
