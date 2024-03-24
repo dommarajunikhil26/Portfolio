@@ -1,68 +1,35 @@
-import { useState } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import ProjectCard from './projectCard';
-import projImg1 from "/public/Resources/Images/About.jpg";
-import colorSharp2 from "/public/Resources/Images/color-sharp2.png";
+import ProjectComponent from "./projects";
+import { useInView } from "react-intersection-observer";
+import { Fade, Zoom } from "react-awesome-reveal";
 import './animate.css';
-import 'react-tabs/style/react-tabs.css';
 
 const Projects = () => {
-    const projects = [
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-    ];
-    const projects2 = [
-        {
-            title: "Business2",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            title: "Business2",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-    ];
-
-    const [tabIndex, setTabIndex] = useState(0);
-
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
     return (
-        <section className="project bg-black text-white py-20 relative">
-            <div className="container mx-auto px-4">
-                <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                    <TabList className="flex justify-center mb-5">
-                        <Tab className="cursor-pointer py-2 px-4 text-white focus:outline-none">MERN Stack</Tab>
-                        <Tab className="cursor-pointer py-2 px-4 text-white focus:outline-none">Java Stack</Tab>
-                    </TabList>
-                    <TabPanel>
-                        <div className="flex flex-wrap -mx-2 justify-center">
-                            {projects.map((project, index) => (
-                                <ProjectCard key={index} {...project} />
-                            ))}
-                        </div>
-                    </TabPanel>
-                    <TabPanel>
-                        <div className="flex flex-wrap -mx-2 justify-center">
-                            {projects2.map((project, index) => (
-                                <ProjectCard key={index} {...project} />
-                            ))}
-                        </div>
-                    </TabPanel>
-                </Tabs>
+        <div id="projects" className="bg-[#101010] min-h-screen p-10">
+            <div ref={ref}>
+                {inView ? (
+                    <Fade delay={5} duration={1000}>
+                        <h2 className="uppercase font-bold text-center font-roboto-slab text-4xl text-gray-50">Projects</h2>
+                    </Fade>
+                ) : (
+                    <h2 className="uppercase text-center font-roboto-slab text-4xl text-gray-50">Projects</h2>
+                )}
             </div>
-            <img className="absolute right-0 bottom-0 w-1/3" src={colorSharp2} alt="Decorative" />
-        </section>
+            <Zoom triggerOnce>
+                <ProjectComponent />
+            </Zoom>
 
-    );
+            <div className="flex justify-center items-center w-full">
+                <div className="loader-circle-9 relative w-24 h-24 rounded-full text-center leading-none text-xs text-cyan-400 uppercase shadow-md flex items-center justify-center">
+                    Adding More soon
+                    <span className="block absolute"></span>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default Projects;
+export default Projects

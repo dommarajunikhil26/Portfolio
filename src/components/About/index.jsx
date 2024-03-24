@@ -9,7 +9,7 @@ const About = () => {
     });
 
     return (
-        <div id="about" className="bg-gray-950 pt-7 pb-10 min-h-screen text-gray-50">
+        <div id="about" className="bg-[#101010] pt-7 pb-10 min-h-screen text-gray-50">
             <div ref={ref}>
                 {inView ? (
                     <Fade delay={5} duration={1000}>
